@@ -45,8 +45,8 @@ export const AnimatedTestimonials = ({
   return (
     <>
     
-      <div id="team" className="text-5xl  text-center font-[family-name:var(--font-lucky)]  md:text-6xl font-extrabold text-black  text-shadow-[2px_2px_0_var(--secondary-color)] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)] mb-6"><span className="text-orange-400 text-shadow-[2px_2px_0_red]">Team</span> Members</div>
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+      <div id="team" className="text-5xl flex justify-center items-center text-center font-[family-name:var(--font-lucky)]  md:text-6xl font-extrabold text-black  text-shadow-[2px_2px_0_var(--secondary-color)] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)] mb-6 mt-10"><span className="text-orange-400 text-shadow-[2px_2px_0_red]">Team</span> Members</div>
+    <div className="mx-auto max-w-sm h-[100vh] px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
@@ -96,7 +96,7 @@ export const AnimatedTestimonials = ({
           </div>
         </div>
       
-        <div className="flex flex-col justify-between py-4">
+        <div className="flex flex-col justify-between py-4 ">
           <motion.div
             key={active}
             initial={{

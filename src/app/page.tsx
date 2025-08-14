@@ -4,6 +4,7 @@ import Hero from "./hero/Page"
 import AboutPage from "@/components/Dashboard/AboutSection"
 import { AnimatedTestimonialsDemo } from "@/components/ui/AnimatedTestimonialsDemo"
 import { ExpandableCardDemo } from "@/components/ui/ExpandableCardDemo"
+import ProjectsFilters from "@/components/Dashboard/ProjectsFilters"
 
 
 
@@ -13,7 +14,8 @@ const page = () => {
       <Header/>
       <Hero/>
       <AboutPage/>
-      <ExpandableCardDemo/>
+      {/* <ExpandableCardDemo/> */}
+      <ProjectsFilters/>
       <AnimatedTestimonialsDemo/>
     </div>
   )
