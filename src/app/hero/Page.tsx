@@ -64,17 +64,17 @@ const Page = () => {
     
     return (
 
-        <section style={{ minHeight: 'calc(100vh - 80px)' }}>
+        <section >
 
 
-            <section className="relative flex items-center justify-center overflow-hidden px-8 py-20 bg-none md:bg-[url('/bg/abstract-retro-wave-background-1.png')] bg-conic-90 bg-contain bg-no-repeat ">
+            <section className="relative flex items-center justify-center overflow-hidden px-8 bg-none md:bg-[url('/bg/abstract-retro-wave-background-1.png')] bg-conic-90 bg-contain bg-no-repeat " style={{ minHeight: 'calc(100vh - 80px)' }}>
 
                 {/* Content wrapper */}
                 <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between z-10">
                     {/* Left Content */}
                     <div className="flex-1 text-left pl-10">
 
-                        <div className="greet overflow-hidden inline-flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-full border-2 border-black shadow-md drop-shadow-[4px_4px_0px_rgba(0,0,0,0.4)] mb-4 ">
+                        <div className="greet overflow-hidden inline-flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-full border-2 border-black shadow-md drop-shadow-[4px_4px_0px_rgba(0,0,0,0.4)] mt-5 md:mt-0 mb-4 ">
                             <span>👋</span>
                             <span>Hey!! Coders</span>
                         </div>
@@ -95,7 +95,7 @@ const Page = () => {
                     {/* Right Side Logo */}
                     <div className="flex-1 flex justify-center items-center mt-8 md:mt-0 relative">
 
-                        <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-[6px_6px_2px_rgba(0,0,0,0.4)] border-2 p-6 bg-black border-white outline-orange-500 outline-5">
+                        <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-[6px_6px_2px_rgba(0,0,0,0.4)] border-2 p-6 bg-black border-white outline-orange-500 outline-5 mb-6 md:mb-0">
                             {/* <div className="absolute inset-0 flex justify-center items-center"
                         >
                             <div className="w-full h-full bg-[url('/bg/hmm.png')] bg-no-repeat bg-center md:[background-size:65%] [background-size:82%] " />

@@ -22,7 +22,7 @@ const sliderVariants: Variants = {
 
 const Infiniteslider = () => {
   return (
-    <div className="relative w-full overflow-hidden whitespace-nowrap bg-[#f3a20f] text-white py-4 font-bold text-3xl border-1 border-black">
+    <div className="relative md:absolute md:bottom-0 w-full overflow-hidden whitespace-nowrap bg-[#f3a20f] text-white py-4 font-bold text-3xl border-1 border-black">
       <motion.div
         className="flex"
         variants={sliderVariants}
