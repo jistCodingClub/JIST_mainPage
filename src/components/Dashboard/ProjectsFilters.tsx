@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react';
 import ProjectCard from './ProjectCard';
 import { projects, years, categories, type Category } from '@/data/projects';
-
+import useIsTouch from "@/hooks/useIsDesktop";
 const catLabel: Record<Category, string> = {
     web: 'Web',
     aiml: 'AI/ML',
@@ -10,6 +10,9 @@ const catLabel: Record<Category, string> = {
 };
 
 export default function ProjectsFilters() {
+      const isTouch = useIsTouch();
+      const heroMinH = isTouch ? "50svh" : "100dvh";
+    
     const [activeYear, setActiveYear] = useState<number>(years[0]);
     const [activeCat, setActiveCat] = useState<Category>('web');
 
@@ -19,11 +22,11 @@ export default function ProjectsFilters() {
     );
 
     return (
-        <section className="relative min-h-screen py-10 px-4 bg-[--background]">
+        <section id='project' className="relative  py-10 px-4 bg-[--background] border-b-4 border-red-500 shadow-[0px_2px_0_rgba(0,0,0,0.4)]"    style={{ minHeight: heroMinH }} >
             {/* Heading */}
-            <section className="border-2 rounded-3xl py-3 bg-emerald-500 border-orange-400 max-w-6xl mx-auto">
+            <section className="border-2 noisy rounded-3xl py-3 bg-green-900 border-orange-400 max-w-6xl mx-auto">
                 <div className="text-center mb-8">
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-black font-[family-name:var(--font-lucky)] text-shadow-[2px_2px_0_var(--secondary-color)] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)] mb-6">
+                    <h1 className="text-5xl md:text-6xl font-extrabold text-black font-[family-name:var(--font-lucky)] text-shadow-[2px_2px_0_var(--secondary-color)] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)] mb-6">
                         <span className="text-orange-400 text-shadow-[2px_2px_0_black]">Club</span> Projects
                     </h1>
                 </div>
