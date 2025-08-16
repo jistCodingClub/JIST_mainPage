@@ -4,8 +4,9 @@ import { SplitText } from 'gsap/SplitText'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'remixicon/fonts/remixicon.css'
-import ClubImage from "../../../public/club-logo.svg"; 
-
+import ClubImage from "../../../public/club-logo.svg";
+import { ScrollTrigger } from 'gsap/all'
+import { useRouter } from "next/navigation";
 gsap.registerPlugin(SplitText)
 
 const navLinks = [
@@ -20,10 +21,11 @@ const Header = () => {
   const mobileNavRef = useRef<HTMLDivElement>(null)
   const closeBtnRef = useRef<HTMLButtonElement>(null)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
-
+  const router = useRouter();
   useEffect(() => {
     animateHeader()
     setupHoverAnimations()
+    navBar()
   }, [])
 
   useEffect(() => {
@@ -59,6 +61,35 @@ const Header = () => {
       }
     }
   }, [isMobileNavOpen])
+
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  const navBar = () => {
+    const navTween = gsap.timeline({
+      scrollTrigger: {
+        trigger: "header",
+        start: "top top",
+        end: "+=100",
+        scrub: true,
+      },
+    })
+
+    navTween.fromTo(
+      "header",
+      {
+        backgroundColor: "transparent",
+        backdropFilter: "blur(0px)",
+      },
+      {
+        // backgroundColor: "rgba(0, 0, 0, 0.8)",
+        backgroundColor: "rgba(243, 236, 210, 0.5)",
+        backdropFilter: "blur(20px)",
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    )
+  }
 
   const animateHeader = () => {
     const headingSplit = new SplitText('#header', { type: 'chars, lines' })
@@ -128,7 +159,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sfont h-[80px] w-full flex justify-between items-center px-4 py-2 border-dashed border-b-2">
+      <header className="sticky top-0 z-50  transition-all duration-300 sfont h-[80px] w-full flex justify-between items-center px-4 py-2 border-dashed border-b-2">
         {/* Logo + Heading */}
         <div className="flex items-center gap-3 relative">
           <div id="logoHeading" className="relative w-20 h-20 flex justify-center items-center">
@@ -191,22 +222,32 @@ const Header = () => {
             className="self-end text-2xl ri-close-line"
             onClick={() => setIsMobileNavOpen(false)}
           ></button>
-
-          {navLinks.map((link) => (
-            <Link className='border-1 rounded-2xl p-2' key={link.label} href={link.href} onClick={() => setIsMobileNavOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
-          <button className="top-button mt-4">Join Now</button>
-          <div className="relative w-50 h-50 rounded-2xl overflow-hidden shadow-[6px_6px_2px_rgba(0,0,0,0.4)]">
-            <Image
-              src={ClubImage}
-              alt="JIST Coding Club Members"
-              fill
-              className="object-cover bg-black"
-            />
-
+          <div className="flex flex-col justify-between h-full">
+            <div className="navs-group flex flex-col gap-5">
+              {navLinks.map((link) => (
+                <Link className='border-1 rounded-2xl p-2' key={link.label} href={link.href} onClick={() => setIsMobileNavOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
+          <div className="w-full flex items-center  justify-center">
+
+            <div className="relative w-50 h-50 rounded-full overflow-hidden shadow-[6px_6px_2px_rgba(0,0,0,0.4)]">
+              <Image
+                src={ClubImage}
+                alt="JIST Coding Club Members"
+                fill
+                className="object-cover bg-black"
+              />
+
+            </div>
+          </div>
+          <button
+            onClick={() => router.push("/joinNow")}
+            className="top-button mt-4">
+            Join Now
+          </button>
 
         </div>
       )}

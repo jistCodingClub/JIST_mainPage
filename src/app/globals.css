@@ -29,12 +29,12 @@
 
   }
 }
-
 html,
 body {
   height: 100%;
   overscroll-behavior: none;
   scrollbar-width: none;
+  /* overflow-x: hidden; */
 }
 
 
@@ -78,7 +78,41 @@ body {
 
 .text-outline {
   -webkit-text-stroke: 1px whitesmoke;
-  /* Adjust stroke width and color */
+
   text-stroke: 1px whitesmoke;
-  /* Standard property for future compatibility */
+
+}
+
+.noisy {
+  position: relative;
+  overflow: hidden;
+}
+
+.noisy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/bg/noise.png"); 
+  background-size: cover;
+  opacity: 0.1; 
+  pointer-events: none;
+  z-index: 2;
+}
+
+.main-text, .moto, #heroLogo {
+  will-change: transform, opacity;
+}
+@media (hover: hover) and (pointer: fine) {
+  .desktop-only-bg {
+    background-image: url('/bg/abstract-retro-wave-background-1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+  }
+  
+}
+@media (hover: hover) and (pointer: fine) {
+  .desktop-only {
+    display: block !important;
+  }
 }
