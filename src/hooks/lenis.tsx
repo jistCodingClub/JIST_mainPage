@@ -1,7 +1,7 @@
 "use client"; // important for hooks
 
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis"
 
 export default function useLenis() {
   useEffect(() => {

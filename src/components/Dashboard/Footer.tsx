@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope} from "react-icons/fa";
 
 export default function Footer() {
   return (
