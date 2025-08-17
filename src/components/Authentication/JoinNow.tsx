@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"; 
-import useIsTouch from "@/hooks/useIsDesktop"; 
+// import useIsTouch from "@/hooks/useIsDesktop"; 
 
 export default function JoinNow() {
     const [formData, setFormData] = useState({
