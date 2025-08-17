@@ -1,77 +1,93 @@
-"use client";
+'use client';
+
+import Link from "next/link";
+import "remixicon/fonts/remixicon.css";
 import { motion } from "framer-motion";
-import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope} from "react-icons/fa";
+import { socialLinks } from '@/data/footer';
 
 export default function Footer() {
-  return (
-    <footer className="bg-[var(--background)] text-[var(--text-color)] border-t-4 border-[var(--text-color)] shadow-[0_-6px_0_var(--secondary-color)] mt-12 relative z-10">
-      <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-        
-        {/* Left */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="space-y-3"
-        >
-          <h2 className="text-2xl font-[var(--font-lucky)] text-[var(--primary-color)] drop-shadow-[2px_2px_0_var(--text-color)]">
-            JIST Codin Club
-          </h2>
-          <p className="text-sm leading-relaxed">
-            A vibrant club for coders, dreamers, and creators. Join us for fun, events, and unforgettable vibes! 🚀
-          </p>
-        </motion.div>
+    return (
+        <footer className="w-full bg-[#f3ecd2] py-16 px-4 md:px-8 border-t-4 border-red-500 shadow-[0px_-2px_0_rgba(0,0,0,0.4)]">
+            <div className="max-w-7xl mx-auto">
+                <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ type: "spring", stiffness: 120, damping: 10 }}
+                    viewport={{ once: true }}
+                    className="noisy bg-cyan-300 border-4 border-black rounded-3xl p-8 shadow-[10px_10px_0_#000000] relative overflow-hidden"
+                >
+                    {/* Background Shapes */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+                        <div className="absolute w-20 h-20 bg-yellow-200 rounded-full opacity-40 animate-pulse-slow top-[10%] left-[5%]"></div>
+                        <div className="absolute w-28 h-28 bg-rose-200 rounded-xl rotate-45 opacity-40 animate-bounce-slow top-[60%] right-[10%]"></div>
+                        <div className="absolute w-16 h-16 bg-purple-200 rounded-full opacity-40 animate-pulse-slow bottom-[5%] left-[25%]"></div>
+                    </div>
 
-        {/* Middle */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-start md:items-center gap-2"
-        >
-          <h3 className="text-xl font-[var(--font-lucky)] text-[var(--secondary-color)] drop-shadow-[2px_2px_0_var(--text-color)]">
-            Quick Links
-          </h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#events" className="hover:text-[var(--primary-color)]">Upcoming Events</a></li>
-            <li><a href="#join" className="hover:text-[var(--primary-color)]">Join Now</a></li>
-            <li><a href="#about" className="hover:text-[var(--primary-color)]">About Us</a></li>
-            <li><a href="#contact" className="hover:text-[var(--primary-color)]">Contact</a></li>
-          </ul>
-        </motion.div>
+                    {/* Main Content */}
+                    <div className="relative z-10 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+                        {/* Left Side: Branding, Email & Socials */}
+                        <div className="flex flex-col items-center md:items-start gap-2"> {/* gap reduced for closer text */}
+                            <motion.h3
+                                className="text-3xl sm:text-4xl font-extrabold text-black font-[family-name:var(--font-lucky)] text-shadow-[2px_2px_0_white] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)]"
+                            >
+                                JIST Coding Club
+                            </motion.h3>
+                            {/* Institute Name Added Here */}
+                            <p className="text-sm md:text-base text-gray-700 font-semibold mb-2">
+                                Jorhat Institute of Science and Technology
+                            </p>
+                            <motion.a
+                                href={socialLinks.email}
+                                className="text-base md:text-lg text-gray-800 font-semibold hover:text-[#ff6600] transition-colors"
+                            >
+                                jistcodingclub@gmail.com
+                            </motion.a>
+                            <div className="flex justify-center gap-6 mt-4">
+                                <motion.a
+                                    href={socialLinks.instagram}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.2, rotate: 10 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                                >
+                                    <i className="ri-instagram-line text-4xl text-rose-500 hover:text-rose-700 transition-colors"></i>
+                                </motion.a>
+                                <motion.a
+                                    href={socialLinks.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.2, rotate: -10 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                                >
+                                    <i className="ri-linkedin-box-fill text-4xl text-blue-500 hover:text-blue-700 transition-colors"></i>
+                                </motion.a>
+                                <motion.a
+                                    href={socialLinks.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.2, rotate: 10 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                                >
+                                    <i className="ri-github-fill text-4xl text-gray-800 hover:text-black transition-colors"></i>
+                                </motion.a>
+                            </div>
+                        </div>
 
-        {/* Right */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="space-y-3"
-        >
-          <h3 className="text-xl font-[var(--font-lucky)] text-[var(--secondary-color)] drop-shadow-[2px_2px_0_var(--text-color)]">
-            Stay Connected
-          </h3>
-          <div className="flex gap-4 text-2xl">
-            <a href="#" className="hover:text-[var(--primary-color)]"><FaInstagram /></a>
-            <a href="#" className="hover:text-[var(--primary-color)]"><FaFacebook /></a>
-            <a href="#" className="hover:text-[var(--primary-color)]"><FaTwitter /></a>
-          </div>
-          <p className="text-sm flex items-center gap-2"><FaEnvelope /> jistcodingclub@gmail.com</p>
-        </motion.div>
-      </div>
+                        {/* Right Side: Quick Links */}
+                        <div className="flex flex-col text-center md:text-left">
+                            <h4 className="text-xl font-bold text-black mb-4 text-shadow-[1px_1px_0_white]">Quick Links</h4>
+                            <Link href="#project" className="text-gray-800 font-semibold hover:text-[#ff6600] transition-colors mb-2">Projects</Link>
+                            <Link href="#team" className="text-gray-800 font-semibold hover:text-[#ff6600] transition-colors mb-2">Team</Link>
+                            <Link href="#events" className="text-gray-800 font-semibold hover:text-[#ff6600] transition-colors">Events</Link>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
 
-      {/* Bottom */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.6 }}
-        viewport={{ once: true }}
-        className="bg-[var(--text-color)] text-[var(--background)] text-center py-4 text-sm font-[var(--font-lucky)]"
-      >
-        © {new Date().getFullYear()} JIST Coding Club ✨ All Rights Reserved
-      </motion.div>
-    </footer>
-  );
+            {/* Copyright Text */}
+            <div className="mt-8 text-center text-sm md:text-base font-semibold text-gray-700">
+                <p>&copy; {new Date().getFullYear()} JIST Coding Club. All rights reserved.</p>
+            </div>
+        </footer>
+    );
 }

@@ -69,6 +69,18 @@ const Page = () => {
         const mainText = new SplitText('.main-text', { type: "chars, words" });
         const motoText = new SplitText('.moto', { type: "words" });
         const greetText = new SplitText('.greet', { type: "words" })
+
+        gsap.from('#heroLogo', {
+            yPercent: '-150',
+            duration: 1.9,
+            ease: 'bounce.out',
+            opacity: 0,
+            delay: 0.2,
+            backgroundColor: "transparent"
+
+        });
+
+
         gsap.from(mainText.chars, {
             yPercent: 100,
             duration: 1.7,
@@ -113,6 +125,7 @@ const Page = () => {
             backgroundColor: "transparent"
 
         });
+        
 
         // main text hover
         mainText.words.forEach(el => {
@@ -146,7 +159,7 @@ const Page = () => {
             >
 
                 {/* Content wrapper */}
-                <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between z-10">
+                <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10">
                     {/* Left Content */}
                     <div className="flex-1 text-left pl-10">
 
@@ -159,7 +172,7 @@ const Page = () => {
                         </div>
 
                         {/* Main Title */}
-                        <h2 className="main-text text-[3.1rem] font-[family-name:var(--font-lucky)] md:text-[5rem] uppercase font-extrabold leading-tight text-[var(--text-color)] text-shadow-[2px_2px_0_var(--secondary-color)] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)] text-outline overflow-hidden ">
+                        <h2 className="main-text text-[3.1rem] font-[family-name:var(--font-lucky)] md:text-[5rem] lg:text-[6rem] uppercase font-extrabold leading-tight text-[var(--text-color)] text-shadow-[2px_2px_0_var(--secondary-color)] drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)] text-outline overflow-hidden ">
                             Jist Coding Club!
                         </h2>
 
@@ -181,7 +194,8 @@ const Page = () => {
                             <div className="w-full h-full bg-[url('/bg/circle-2.png')] bg-no-repeat bg-center md:[background-size:75%] [background-size:87%] drop-shadow-[7px_7px_2px_rgba(0,0,0,0.5)] " />
                         </div>
                         {/*  Logo */}
-                        <Image
+                      
+                         <Image
                             src={Logo}
                             alt="JIST Coding Club Logo"
                             width={350}
