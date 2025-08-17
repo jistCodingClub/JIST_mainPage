@@ -1,28 +1,27 @@
 "use client"
-import Header from "@/components/Dashboard/Header"
+
 import Hero from "./hero/Page"
 import AboutPage from "@/components/Dashboard/AboutSection"
-import { AnimatedTestimonialsDemo } from "@/components/ui/AnimatedTestimonialsDemo"
 import ProjectsFilters from "@/components/Dashboard/ProjectsFilters"
 import Events from "@/components/Dashboard/Events"
-import JoinNow from "@/components/Authentication/JoinNow"
 import Footer from "@/components/Dashboard/Footer"
+import TeamSection from "@/components/Dashboard/TeamSection"
+import Header from "@/components/Dashboard/Header"
+
 
 
 const page = () => {
 
   return (
     <div className="">
- 
-      <Header/>
-      <Hero/>
-      <AboutPage/>
-     
-      <ProjectsFilters/>
-      <AnimatedTestimonialsDemo/>
-      <Events/>
-      <JoinNow/>
-      <Footer/>
+
+      <Header />
+      <Hero />
+      <AboutPage />
+      <ProjectsFilters />
+      <TeamSection />
+      <Events />
+      <Footer />
     </div>
   )
 }

@@ -30,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${luckiestGuy.variable} ${poppins.variable} antialiased`}>
+ 
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
