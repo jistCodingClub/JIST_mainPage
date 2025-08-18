@@ -20,6 +20,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "JIST Coding Club",
   description: "Official website of JIST Coding Club",
+   icons: {
+    icon: "/club-logo.svg", 
+  },
+
 };
 
 export default function RootLayout({

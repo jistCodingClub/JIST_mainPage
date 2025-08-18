@@ -16,10 +16,10 @@ const Login = () => {
             return;
         }
 
-        // Logic for login (replace with your actual login call)
+        // Logic 
         console.log("Login attempt with:", { email, pwd });
 
-        // On successful login
+        // successful login
         setMessage({ type: "success", text: "Logged in successfully!" });
         setTimeout(() => {
             setMessage(null);

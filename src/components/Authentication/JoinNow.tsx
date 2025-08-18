@@ -115,6 +115,7 @@ export default function JoinNow() {
                     <option value="Bsc Physics">Physics</option>
                     <option value="Bsc Chemistry">Chemistry</option>
                     <option value="Bsc Mathematics">Mathematics</option>
+                    <option value="Bsc Mathematics">CS&IT</option>
                     <option value="PEI">PEI</option>
                     <option value="Mechanical">Mechanical</option>
                     <option value="Civil">Civil</option>
