@@ -26,7 +26,6 @@ export const HeroAnimation = () => {
                 start: isMobile ? "top 85%" : "top 90%",
                 end: isMobile ? "top 40%" : "top 20%",
                 scrub: isMobile ? 0.8 : 0.5,
-               markers : true
             }
         });
 
@@ -49,12 +48,9 @@ export const HeroAnimation = () => {
         }
 
         hero.to("#heroLogo", {
-            rotate: 120,
             duration: 1,
             ease: "power1.out",
-            yPercent: -50,
-
-            xPercent:50
+            yPercent: -10,
         }, "0");
     }
 }
