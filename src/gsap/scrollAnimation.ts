@@ -46,11 +46,14 @@ export const HeroAnimation = () => {
                 ease: "power2.out"
             }, "0");
         }
+        
+        if(!isMobile){
+            hero.to("#heroLogo", {
+                duration: 1,
+                ease: "power1.out",
+                yPercent: -10,
+            }, "0");
 
-        hero.to("#heroLogo", {
-            duration: 1,
-            ease: "power1.out",
-            yPercent: -10,
-        }, "0");
+        }
     }
 }
