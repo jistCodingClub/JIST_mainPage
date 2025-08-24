@@ -1,6 +1,5 @@
 'use client';
 
-
 import { motion, Variants } from "framer-motion";
 
 const text = "JORHAT INSTITUTE OF SCIENCE AND TECHNOLOGY - JIST CODING CLUB ";
@@ -13,7 +12,7 @@ const sliderVariants: Variants = {
             x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 10,
+                duration: 20,
                 ease: "linear",
             },
         },
@@ -22,18 +21,18 @@ const sliderVariants: Variants = {
 
 const Infiniteslider = () => {
     return (
-        <div className="relative md:absolute md:bottom-0 w-full overflow-hidden whitespace-nowrap bg-[#f3a20f] text-black py-2 sm:py-3 font-bold text-lg sm:text-xl md:text-3xl border-y-4 border-black shadow-[0px_6px_0_#000]">
+        <div className="relative md:absolute md:bottom-0 w-full overflow-hidden whitespace-nowrap bg-black text-white py-2 sm:py-3 font-bold text-lg sm:text-xl md:text-3xl border-y-4 border-white shadow-[0px_6px_0_#fff]">
             <motion.div
-                className="flex text-shadow-[2px_2px_0_white]" 
+                className="flex font-press-start md:text-2xl" 
                 variants={sliderVariants}
                 animate="animate"
             >
-                <p className="mr-8">{text}</p>
-                <p className="mr-8">{text}</p>
-                <p className="mr-8">{text}</p>
-                <p className="mr-8">{text}</p>
-                <p className="mr-8">{text}</p>
-                <p className="mr-8">{text}</p>
+                <p className="mr-8 text-shadow-[0px_0px_2px_blue]">{text}</p>
+                <p className="mr-8 text-shadow-[0px_0px_2px_blue]">{text}</p>
+                <p className="mr-8 text-shadow-[0px_0px_2px_blue]">{text}</p>
+                <p className="mr-8 text-shadow-[0px_0px_2px_blue]">{text}</p>
+                <p className="mr-8 text-shadow-[0px_0px_2px_blue]">{text}</p>
+                <p className="mr-8 text-shadow-[0px_0px_2px_blue]">{text}</p>
             </motion.div>
         </div>
     );

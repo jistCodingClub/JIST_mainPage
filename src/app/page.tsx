@@ -7,6 +7,7 @@ import Events from "@/components/Dashboard/Events"
 import Footer from "@/components/Dashboard/Footer"
 import TeamSection from "@/components/Dashboard/TeamSection"
 import Header from "@/components/Dashboard/Header"
+// import Preloader from "@/components/loadingpage/PreLoad"
 
 
 
@@ -14,7 +15,7 @@ const page = () => {
 
   return (
     <div className="">
-
+      {/* <Preloader/> */}
       <Header />
       <Hero />
       <AboutPage />
